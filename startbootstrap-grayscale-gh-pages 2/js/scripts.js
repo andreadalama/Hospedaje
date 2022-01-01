@@ -52,3 +52,35 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+<script type="text/javascript"> 
+
+// función que se ejecute al darle clic a cada una de las imágenes
+// pasamos como atributo a la función la palabra reservada this que hace referencia al propio elemento
+
+function cambiar(imagen) {
+
+    var anterior = "demo-image";
+    var aux = "ipad";
+
+    if(anterior != "demo-image"){
+        aux = anterior;
+        anterior = imagen.src;  //obtenemos la ruta de la imagen con imagen.src
+    }else{
+        anterior = imagen.src;
+    }
+
+    console.log("Anterior: " + anterior);
+    console.log("Auxiliar: " + aux);
+
+    //obtener el atributo src de la imagen que has clicado. una vez obtengas la ruta de la imagen en la que acabas de hacer clic, se la puedes asignar a la imagen 2    
+} 
+
+</script>
+
+<body>
+
+    <img id="assets" src=".\demo-image\01.jpg" alt="demo-image" onclick="cambiar(this)" name="ipad">  
+    <img id="assets" src=".\demo-image\02.jpg" alt="demo-image" onclick="cambiar(this)" name="ipad">   
+
+</body>
